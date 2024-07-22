@@ -14,7 +14,7 @@ def home():
     """
         The default function
     """
-    return "Welcome to the Flask App!"
+    return render_template('index.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
