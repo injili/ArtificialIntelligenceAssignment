@@ -1,0 +1,16 @@
+blinker
+click
+exceptiongroup
+flask
+gunicorn
+importlib-metadata
+iniconfig
+itsdangerous
+jinja2
+MarkupSafe
+packaging
+pluggy
+pytest
+tomli
+werkzeug
+zipp

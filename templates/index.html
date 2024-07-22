@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static',filename='images/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{url_for('static',filename='images/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static',filename='images/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{url_for('static',filename='images/site.webmanifest')}}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     
     <!--Tailwind ting-->
     <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
@@ -10,7 +16,7 @@
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
-    <title>RPS</title>
+    <title>Rock Paper Scissors</title>
 
 </head>
 <body style='font-family: "Alata", sans-serif;''>
