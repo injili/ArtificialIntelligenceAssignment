@@ -6,12 +6,64 @@
     
     <!--Tailwind ting-->
     <link href="{{url_for('static',filename='css/main.css')}}" rel="stylesheet">
-    <title>RockPaperScissors</title>
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+    <title>RPS</title>
 
 </head>
-<body>
-    <div class="h-screen bg-neutral-800 text-white flex justify-center items-center"><div>These</div></div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script></script>
+<body style='font-family: "Alata", sans-serif;''>
+    <div class="h-screen bg-neutral-200 text-black flex flex-col justify-center items-center">
+        <div>
+            <h1  class="text-center font-bold text-7xl py-12">Rock, Paper, Scissors</h1>
+        </div>
+        <form id="game-form" class="flex w-96 h-20 py-2 2xl:py-4 xl:py-4 lg:py-4">
+            <select
+                type="text"
+                id="choice"
+                name="choice"
+                 class="bg-neutral-200 border border-blue-600 text-gray-900 text-sm rounded-lg block h-full w-96 p-2">
+                 <option value="rock">rock</option>
+                 <option value="paper">paper</option>
+                 <option value="scissors">scissors</option>
+            </select>
+            <button type="submit" class="flex items-center ml-2 2xl:ml-4 xl:ml-4 lg:ml-4  bg-blue-600 text-white rounded-lg px-4">
+                <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"  fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2a1 1 0 0 1 .932.638l7 18a1 1 0 0 1-1.326 1.281L13 19.517V13a1 1 0 1 0-2 0v6.517l-5.606 2.402a1 1 0 0 1-1.326-1.281l7-18A1 1 0 0 1 12 2Z" clip-rule="evenodd"/>
+                </svg>                      
+                send
+            </button>
+        </form>
+        <div id="result" class="text-center">
+            <p id="user-choice"></p>
+            <p id="ai-choice"></p>
+            <p id="game-result" class="text-6xl font-bold py-12"></p>
+        </div>
+    </div>
+    <div class="text-center w-full">
+        <small>
+            Built with ♥ by injili, cheru and pasha | Kabarak University.
+        </small>
+    </div>
+    <script>
+        document.getElementById('game-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const choice = document.getElementById('choice').value;
+            fetch('/play', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'choice=' + choice
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('user-choice').textContent = 'You chose: ' + data.user_choice;
+                document.getElementById('ai-choice').textContent = 'AI chose: ' + data.ai_choice;
+                document.getElementById('game-result').textContent = data.result;
+            });
+        });
+    </script>
 </body>
 </html>
