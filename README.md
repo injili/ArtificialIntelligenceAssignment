@@ -4,6 +4,13 @@
 
 This project implements a simple Rock, Paper, Scissors game using Flask for the backend and a basic HTML frontend. The AI opponent uses a random choice strategy. The application provides an interface for the user to play the game, keeps track of the scores, and displays the result of each round.
 
+This project falls under the category of **Expert system**.
+
+Here's the reasoning:  
+An expert system is a computer system that emulates the decision-making ability of a human expert. In this case, the Rock, Paper, Scissors game with AI implements a basic form of decision-making (although simple) that mimics human gameplay.
+The AI opponent makes decisions based on a predefined strategy (random choice in this case), which is a characteristic of expert systems.
+While the AI in this game is quite basic, more advanced implementations with complex strategies or learning mechanisms could still be considered under the umbrella of expert systems or could branch into other AI-related fields.
+
 ## Deployment
 
 https://artificialintelligenceassignment.onrender.com/
